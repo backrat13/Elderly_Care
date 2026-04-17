@@ -1,0 +1,10 @@
+[PERCEPTION PLANE: BIO-LOGIC]
+IMAGE TYPE: Detailed Visual Prototype
+CASING: Clear, textured boro-silicate glass, hand-sculpted lab-equipment aesthetic, "Relic from the Future" texture. Vacuum-sealed and hand-finished.
+INTERNAL ARCHITECTURE: Intricate copper and fiber-optic filament wiring, subtly organized like a biological nervous system, all visible through the clear chassis.
+PROCESSOR: Clear view of the custom 'RAT-GEMMA-3E' micro-processor, labeled 'SALEM LAB'.
+PRIMARY INTERFACE: 1x sharp, circular OLED display screen.
+PRIMARY DATA DISPLAY (Prioritized): Large 'COHERENCE: 96%' text (glowing blue/green accent), centered.
+SECONDARY DATA DISPLAY (Required Vitals): Text layout below coherence score showing 'RR: 14.8' | 'HR: 68 bpm'.
+VISUALIZATION: High-Coherence Pulse, visualized as a growing blue circle that pulses, expands, and contracts dynamically on the circular OLED display in perfect synchronization with the user's breathing depth.
+SETTING: Close-up shot, softly lit scientific workbench, generic lab-equipment components slightly visible.

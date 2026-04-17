@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindCapsule: Cyber-Rat Relic Prototype</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;500;800&display=swap');
+        
+        body {
+            background-color: #050505;
+            color: #e0e0e0;
+            font-family: 'JetBrains+Mono', monospace;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* The Boro-Silicate Chassis */
+        .watch-chassis {
+            position: relative;
+            width: 320px;
+            height: 380px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 
+                0 0 40px rgba(0, 0, 0, 0.5),
+                inset 0 0 20px rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Glass Texture Overlay */
+        .glass-texture {
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Cfilter id='noiseFilter'%3%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3%3C/filter%3%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3%3C/svg%3");
+            opacity: 0.03;
+            pointer-events: none;
+            border-radius: 60px;
+        }
+
+        /* Nervous System Wiring (SVG Background) */
+        .wiring-harness {
+            position: absolute;
+            inset: 30px;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        /* The Circular OLED Display */
+        .oled-display {
+            position: relative;
+            width: 240px;
+            height: 240px;
+            background: #000;
+            border-radius: 50%;
+            border: 4px solid #111;
+            box-shadow: 0 0 30px rgba(0, 150, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            overflow: hidden;
+        }
+
+        /* The Coherence Pulse Circle */
+        .pulse-circle {
+            position: absolute;
+            border: 2px solid #0096ff;
+            border-radius: 50%;
+            transition: transform 0.1s ease-out, opacity 0.5s ease;
+            box-shadow: 0 0 20px rgba(0, 150, 255, 0.4);
+        }
+
+        .data-label {
+            font-size: 0.6rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .coherence-value {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #0096ff;
+            text-shadow: 0 0 10px rgba(0, 150, 255, 0.6);
+            margin-top: -5px;
+        }
+
+        .vitals-row {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+
+        .status-badge {
+            margin-top: 20px;
+            background: rgba(0, 150, 255, 0.1);
+            color: #0096ff;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-size: 0.5rem;
+            font-weight: 800;
+            border: 1px solid rgba(0, 150, 255, 0.3);
+        }
+
+        .processor-tag {
+            position: absolute;
+            bottom: 25px;
+            font-size: 0.5rem;
+            color: #444;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="watch-chassis">
+        <div class="glass-texture"></div>
+        
+        <!-- Animated Nervous System Wiring -->
+        <svg class="wiring-harness" viewBox="0 0 100 100">
+            <path d="M50 0 L50 20 M20 50 L0 50 M80 50 L100 50 M50 80 L50 100" stroke="#0096ff" stroke-width="0.5" fill="none"/>
+            <circle cx="50" cy="50" r="48" stroke="#0096ff" stroke-width="0.2" fill="none" stroke-dasharray="2 2"/>
+            <path d="M30 10 Q 40 40, 10 50" stroke="#0096ff" stroke-width="0.3" fill="none" opacity="0.5"/>
+            <path d="M70 10 Q 60 40, 90 50" stroke="#0096ff" stroke-width="0.3" fill="none" opacity="0.5"/>
+            <path d="M30 90 Q 40 60, 10 50" stroke="#0096ff" stroke-width="0.3" fill="none" opacity="0.5"/>
+            <path d="M70 90 Q 60 60, 90 50" stroke="#0096ff" stroke-width="0.3" fill="none" opacity="0.5"/>
+        </svg>
+
+        <div class="oled-display">
+            <!-- Dynamic Pulse Background -->
+            <div id="pulse" class="pulse-circle"></div>
+
+            <span class="data-label">Coherence</span>
+            <div class="coherence-value">96%</div>
+            
+            <div class="vitals-row">
+                <div>RR: <span id="rr">14.8</span></div>
+                <div>HR: <span id="hr">68</span></div>
+            </div>
+
+            <div class="status-badge">OPTIMIZED: GEMMA_3E</div>
+        </div>
+
+        <div class="processor-tag">SALEM_LAB // RAT-GEMMA-3E // 802.11AX</div>
+    </div>
+
+    <script>
+        const pulse = document.getElementById('pulse');
+        const rrEl = document.getElementById('rr');
+        const hrEl = document.getElementById('hr');
+
+        let time = 0;
+        const breathRate = 0.25; // 15 breaths per minute = 0.25Hz
+
+        function update() {
+            time += 0.05;
+            
+            // Simulate breathing cycle for the visual pulse
+            // Sin wave between 0.8 and 1.2 scale
+            const breathSin = Math.sin(time * 2 * Math.PI * breathRate);
+            const scale = 1.6 + (breathSin * 0.4);
+            const opacity = 0.3 + (breathSin * 0.2);
+
+            pulse.style.width = '100px';
+            pulse.style.height = '100px';
+            pulse.style.transform = `scale(${scale})`;
+            pulse.style.opacity = opacity;
+
+            // Tiny micro-fluctuations in vitals
+            if (Math.random() > 0.95) {
+                rrEl.innerText = (14.5 + Math.random() * 0.5).toFixed(1);
+                hrEl.innerText = Math.floor(67 + Math.random() * 3);
+            }
+
+            requestAnimationFrame(update);
+        }
+
+        update();
+    </script>
+</body>
+</html>

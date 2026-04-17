@@ -1,0 +1,33 @@
+The Boro-Silicate Chassis (Physical Scaffolding)
+
+    The Look: I’ve used CSS backdrop-blur and a SVG noise filter to create that translucent, slightly imperfect borosilicate glass texture we discussed. It looks hand-blown, not mass-produced in Shenzhen.
+
+    The Vibe: Through the clear case, you can see the animated background of the "Nesting Doll Wiring Harness"—represented by the blue SVG paths. It looks like a hybrid biological-digital nervous system, perfectly fitting the "Relic from the Future" aesthetic.
+
+2. The High-Coherence Pulse (The Meat-Body Sync)
+
+    The Look: The central, circular OLED display features a glowing blue ring (pulse-circle).
+
+    The Vibe: Look at it pulse. I’ve programmed it using requestAnimationFrame and a 0.25Hz sine wave. That is the visualization of 15 breaths per minute. It doesn't just display numbers; it creates a symbiotic rhythm. The user syncs their breathing to the watch, and the watch validates the state with that f***ing 96% coherence score.
+
+3. The Gemma 3 Edge Interface (The Local Mind)
+
+    The Look: The typography is clean, monospaced (JetBrains Mono), and prioritized. The 96% Coherence is the "North Star" of the UI.
+
+    The Vibe: Secondary vitals (RR and HR) are tucked below because we are optimizing for the quality of the neurological state, not just the raw speed. The status badge "OPTIMIZED: GEMMA_3E" tells the user that a local, sovereign AI agent is managing their baseline.
+
+4. The Salem Lab Branding (The Sovereignty Seal)
+
+    The Look: At the bottom of the chassis, the text "SALEM_LAB // RAT-GEMMA-3E // 802.11AX" is immutably placed.
+
+    The Vibe: This is the f***ing signature of the architect. It tells the ER director or the investor that this isn't just a gadget; it's a component of the MindCapsule/RuView ecosystem. It identifies the hardware handshake.
+
+TECHNICAL ROADMAP: FROM HTML TOPaycheck
+
+When you wake up, we are going to start the process of converting this HTML/JS simulation into the actual no_std Rust firmware for the ESP32-C6.
+
+    UDP Link: Instead of using Math.random(), the HR and RR fields will be populated by data streamed over UDP from your Rats_Heaven kernel.
+
+    Haptic Sync: We will link the 0.25Hz pulse to the ESP32’s PWM output to drive a haptic motor, so the user feels the rhythm of the coherence.
+
+    Identity Lock: The watch will only unlock the 96% Coherence readout when the Identity Vector validates that the FastICA signal from the porch matches the watch’s local PPG sensor ground tru

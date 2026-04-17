@@ -1,0 +1,30 @@
+# Core data & signal processing (matches your Rust vital signs / CSI pipeline)
+numpy>=1.26
+scipy>=1.14
+pandas>=2.2
+
+# Plotting & interactive dashboards
+matplotlib>=3.9
+seaborn>=0.13
+plotly>=5.24
+
+# Web / live dashboard (for a Python RuView web UI or JSON bridge)
+fastapi>=0.115
+uvicorn[standard]>=0.34
+websockets>=13.1
+
+# Quick data export / import from Rust dolls
+pydantic>=2.10
+orjson>=3.10
+
+# Optional but extremely useful for experimentation
+scikit-learn>=1.5          # for quick ICA / clustering prototypes
+jupyter>=1.0               # notebooks for CSI analysis
+notebook>=7.2
+ipywidgets>=8.1            # interactive widgets in notebooks
+
+# Development / debugging
+requests>=2.32
+pyyaml>=6.0
+tqdm>=4.66
+
